@@ -3,21 +3,38 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ceník | Chalupa u Bedýnků</title>
+  <title>Ceník pronájmu chalupy v Krkonoších | U Bedýnků</title>
   <meta name="description" content="Ceník pronájmu Chalupy u Bedýnků. Mimo sezonu, letní a zimní sezona, jarní prázdniny, Velikonoce, Vánoce a Silvestr.">
   <link rel="canonical" href="https://www.chataubedynku.cz/cenik.html">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Ceník Chalupy u Bedýnků">
   <meta property="og:description" content="Přehled cen za týden a víkend, zálohy, kauce a poplatků.">
   <meta property="og:url" content="https://www.chataubedynku.cz/cenik.html">
-  <meta property="og:image" content="https://www.chataubedynku.cz/assets/img/logo-no-text.jpg">
+  <meta property="og:site_name" content="Chalupa u Bedýnků">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:image" content="https://www.chataubedynku.cz/assets/img/chalupa-v-zime.jpg">
+  <meta property="og:image:width" content="1080">
+  <meta property="og:image:height" content="810">
+  <meta property="og:image:alt" content="Chalupa u Bedýnků v zimě">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://www.chataubedynku.cz/assets/img/logo-no-text.jpg">
+  <meta name="twitter:title" content="Ceník pronájmu Chalupy u Bedýnků">
+  <meta name="twitter:description" content="Ceny celé chalupy za týden a víkend v letní, zimní i vedlejší sezoně.">
+  <meta name="twitter:image" content="https://www.chataubedynku.cz/assets/img/chalupa-v-zime.jpg">
   <link rel="icon" href="assets/img/favicon-32.png?v=2" type="image/png" sizes="32x32">
   <link rel="shortcut icon" href="favicon.ico?v=2" type="image/x-icon">
   <link rel="apple-touch-icon" href="assets/img/favicon-180.png?v=2">
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <script defer src="assets/js/main.js"></script>
+  <link rel="stylesheet" href="assets/css/styles.css?v=3">
+  <script defer src="assets/js/main.js?v=3"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Úvod", "item": "https://www.chataubedynku.cz/"},
+      {"@type": "ListItem", "position": 2, "name": "Ceník", "item": "https://www.chataubedynku.cz/cenik.html"}
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Přeskočit na obsah</a>
@@ -27,6 +44,7 @@
         <img class="brand-mark" src="assets/img/logo-no-text.jpg" alt="" width="44" height="44">
         <span class="brand-text"><span class="brand-name">Chalupa u Bedýnků</span><span class="brand-place">Prkenný Důl, Krkonoše</span></span>
       </a>
+      <a class="mobile-cta" href="rezervace.html">Poptat</a>
       <button class="nav-toggle" type="button" aria-label="Otevřít menu" aria-controls="main-nav" aria-expanded="false"><span></span></button>
       <nav class="main-nav" id="main-nav" aria-label="Hlavní navigace">
         <a href="index.html">Úvod</a>
@@ -34,11 +52,7 @@
         <a href="aktivity.html">Aktivity</a>
         <a href="cenik.html" aria-current="page">Ceník</a>
         <a href="kontakt.html">Kontakt</a>
-        <a class="button button-primary nav-cta" href="rezervace.html">Rezervace</a>
-        <span class="nav-icon-group" aria-label="Rychlá navigace">
-          <a class="nav-icon-button" href="index.html" aria-label="Hlavní stránka" title="Hlavní stránka"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#home"></use></svg></a>
-          <button class="nav-icon-button" type="button" data-history-back aria-label="Zpět" title="Zpět"><svg class="icon icon-back" aria-hidden="true"><use href="assets/img/icons.svg#arrow-right"></use></svg></button>
-        </span>
+        <a class="button button-primary nav-cta" href="rezervace.html">Poptat termín</a>
       </nav>
     </div>
   </header>
@@ -50,8 +64,9 @@
         <img src="assets/img/chalupa-v-zime.jpg" alt="Chalupa u Bedýnků v zimě" width="1080" height="810" fetchpriority="high">
       </picture>
       <div class="hero-content narrow reveal">
+        <nav class="breadcrumbs" aria-label="Drobečková navigace"><a href="index.html">Úvod</a><span aria-hidden="true">/</span><span>Ceník</span></nav>
         <span class="eyebrow">Ceny za celou chalupu</span>
-        <h1>Jasný přehled pro rychlé plánování.</h1>
+        <h1>Ceník pronájmu Chalupy u Bedýnků.</h1>
         <p class="hero-lead">Letní sezona je červen, červenec a srpen. Zimní sezona je leden, únor a březen. Minimální délka ubytování jsou 2 noci.</p>
       </div>
     </section>
@@ -65,21 +80,22 @@
         </div>
         <div class="price-table-wrap reveal">
           <table class="price-table">
+            <caption class="sr-only">Ceny pronájmu celé Chalupy u Bedýnků podle období</caption>
             <thead>
               <tr>
-                <th>Termín</th>
-                <th>Cena za týden</th>
-                <th>Cena za víkend</th>
+                <th scope="col">Termín</th>
+                <th scope="col">Cena za týden</th>
+                <th scope="col">Cena za víkend</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>Mimo sezonu</td><td>20 000 Kč</td><td>14 000 Kč</td></tr>
-              <tr><td>Letní sezona</td><td>34 000 Kč</td><td>16 000 Kč</td></tr>
-              <tr><td>Zimní sezona</td><td>34 000 Kč</td><td>16 000 Kč</td></tr>
-              <tr><td>Jarní prázdniny</td><td>33 000 Kč</td><td>-</td></tr>
-              <tr><td>Velikonoce</td><td>22 000 Kč</td><td>18 000 Kč</td></tr>
-              <tr><td>Vánoce</td><td>24 000 Kč</td><td>-</td></tr>
-              <tr><td>Silvestr</td><td>50 000 Kč</td><td>-</td></tr>
+              <tr><th scope="row">Mimo sezonu</th><td data-label="Týden">20 000 Kč</td><td data-label="Víkend">14 000 Kč</td></tr>
+              <tr><th scope="row">Letní sezona</th><td data-label="Týden">34 000 Kč</td><td data-label="Víkend">16 000 Kč</td></tr>
+              <tr><th scope="row">Zimní sezona</th><td data-label="Týden">34 000 Kč</td><td data-label="Víkend">16 000 Kč</td></tr>
+              <tr><th scope="row">Jarní prázdniny</th><td data-label="Týden">33 000 Kč</td><td data-label="Víkend">—</td></tr>
+              <tr><th scope="row">Velikonoce</th><td data-label="Týden">22 000 Kč</td><td data-label="Víkend">18 000 Kč</td></tr>
+              <tr><th scope="row">Vánoce</th><td data-label="Týden">24 000 Kč</td><td data-label="Víkend">—</td></tr>
+              <tr><th scope="row">Silvestr</th><td data-label="Týden">50 000 Kč</td><td data-label="Víkend">—</td></tr>
             </tbody>
           </table>
         </div>
@@ -128,7 +144,7 @@
 
   <footer class="site-footer">
     <div class="footer-grid">
-      <div><h2>Chalupa u Bedýnků</h2><p>Prkenný důl 67, 541 01 Žacléř. Horská chalupa pro 2 až 14 osob v Krkonoších.</p></div>
+      <div><h2>Chalupa u Bedýnků</h2><p>Prkenný Důl 67, 542 01 Žacléř. Horská chalupa pro 2 až 14 osob v Krkonoších.</p></div>
       <div class="footer-logo-wrap"><img class="footer-logo" src="assets/img/logo-full.jpg" alt="Logo Chalupa u Bedýnků" width="150" height="150"></div>
       <div><h3>Kontakt</h3><p><a href="tel:+420720657935">+420 720 657 935</a><br><a href="tel:+420776893644">+420 776 893 644</a><br><a href="mailto:chataubedynku@seznam.cz">chataubedynku@seznam.cz</a></p></div>
       <div><h3>Navigace</h3><div class="footer-links"><a href="ubytovani.html">Ubytování</a>
