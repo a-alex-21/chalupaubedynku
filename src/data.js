@@ -3,7 +3,7 @@ export const image = (name) => siteUrl(`assets/img/${name}.webp`);
 export const photos = [
   {
     id: "summer",
-    src: image("chalupa-summer-panorama"),
+    src: image("chalupa-summer-panorama-lossless"),
     title: "Chalupa v létě",
     category: "Exteriér",
     alt: "Chalupa u Bedýnků se zahradou v létě",
@@ -12,7 +12,7 @@ export const photos = [
   },
   {
     id: "winter",
-    src: image("chalupa-winter-panorama"),
+    src: image("chalupa-winter-panorama-lossless"),
     title: "Chalupa v zimě",
     category: "Exteriér",
     alt: "Chalupa u Bedýnků pod sněhem",
