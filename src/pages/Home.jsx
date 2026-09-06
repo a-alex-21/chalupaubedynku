@@ -21,7 +21,7 @@ import {
   FAQ,
   CTA,
 } from "../components/Shared";
-import { photoById, faqs } from "../data";
+import { photoById, faqs, image } from "../data";
 export function Home() {
   const [season, setSeason] = useState("summer");
   return (
@@ -65,7 +65,18 @@ export function Home() {
       <section className="surroundings-section">
         <div className="container surroundings-layout">
           <div className="surroundings-image">
-            <Photo photo={photoById(season === "winter" ? "ski" : "summer")} />
+            <Photo
+              photo={
+                season === "winter"
+                  ? photoById("ski")
+                  : {
+                      ...photoById("summer"),
+                      src: image("chalupa-summer-sharp"),
+                      width: 1448,
+                      height: 1086,
+                    }
+              }
+            />
             <span className="location-card">
               <MapPin size={18} />
               <span>
