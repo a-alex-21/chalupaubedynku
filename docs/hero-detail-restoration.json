@@ -1,0 +1,10 @@
+{
+  "tool": "Built-in image generation; no API key",
+  "summer": "Use case: precise-object-edit. High-detail restoration of this EXACT panoramic summer cottage photograph for a large website hero. Preserve framing, all architecture, every structure position, camera perspective, original lighting and colors. Restore optical clarity: fine distinct timber boards and wood grain, straight crisp flat roof panel seams, sharp window frames, brick mortar, individual natural leaves rather than mushy foliage. Professional architectural photograph with deep depth of field. No artificial sharpen halos, no HDR, no painterly texture, no additions or redesign. The main cottage must remain fully visible at the exact same size and position. Return highest native resolution available, ideally 3840x1648, but prioritize genuine clear photographic detail. Do not blur or soften output.",
+  "winter": "Use case: precise-object-edit. Restore high photographic detail in image1, the winter cottage panorama. Image2 is geometry and sharp-detail reference of same summer cottage. Keep image1 exact framing, camera, cottage proportions, roof, windows, garden, snowy terrain, cold winter light and desaturated brown timber. Resolve crisp wood boards and grain, window frames, brickwork and natural snow texture, detailed bare branches. Preserve cold blue-gray ambient shadows and neutral snow. No warm summer colors. No additional objects, building changes, text, HDR, sharpening halos, crunchy edges or painting. Keep alignment with image2 for seasonal crossfade. Return highest native resolution available ideally3840x1648, real photographic fine detail without softening.",
+  "outputs": [
+    "public/assets/img/chalupa-summer-detail.webp",
+    "public/assets/img/chalupa-winter-detail.webp"
+  ],
+  "note": "Detail-restored outputs exported pixel-identically with lossless WebP. Native outputs remain approximately 1900 pixels wide, not native 4K."
+}
