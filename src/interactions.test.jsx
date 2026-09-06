@@ -58,7 +58,10 @@ describe("interactive property pages", () => {
   });
   it("switches the hero to winter and opens the actual photo viewer", async () => {
     const user = userEvent.setup();
-    wrap(<Hero />);
+    const { container } = wrap(<Hero />);
+    const summerLayer = container.querySelector(".hero-season-scene img");
+    const winterLayer = container.querySelector(".hero-winter-layer");
+    expect(winterLayer).toHaveStyle({ opacity: "0" });
     await user.click(screen.getByRole("button", { name: "Zima", exact: true }));
     expect(
       screen.getByRole("button", { name: "Zima", exact: true }),
@@ -66,6 +69,18 @@ describe("interactive property pages", () => {
     expect(
       screen.getByRole("group", { name: "1 ze 4: Chalupa v zimě" }),
     ).toBeInTheDocument();
+    // Keep summer underneath until the winter download completes.
+    expect(winterLayer).toHaveStyle({ opacity: "0" });
+    expect(container.querySelector(".hero-season-scene img")).toBe(summerLayer);
+    fireEvent.load(winterLayer);
+    await waitFor(() => expect(winterLayer).toHaveStyle({ opacity: "1" }), {
+      timeout: 2000,
+    });
+    await user.click(screen.getByRole("button", { name: "Léto", exact: true }));
+    await waitFor(() => expect(winterLayer).toHaveStyle({ opacity: "0" }), {
+      timeout: 2000,
+    });
+    await user.click(screen.getByRole("button", { name: "Zima", exact: true }));
     await user.click(
       screen.getByRole("button", { name: "Fotogalerie", exact: true }),
     );

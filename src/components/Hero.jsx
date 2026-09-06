@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import { AnimatePresence, m, useReducedMotion } from "motion/react";
+import { m, useReducedMotion } from "motion/react";
 import {
   ArrowUpRight,
   ArrowLeft,
@@ -17,6 +17,7 @@ import { Photo, useGallery } from "./Shared";
 export function Hero() {
   const [season, setSeason] = useState("summer");
   const [selected, setSelected] = useState(0);
+  const [winterReady, setWinterReady] = useState(false);
   const reduced = useReducedMotion();
   const [viewport, embla] = useEmblaCarousel({
     loop: true,
@@ -57,22 +58,52 @@ export function Hero() {
               aria-label={`${index + 1} ze ${slides.length}: ${photo.title}`}
               aria-hidden={index !== selected}
             >
-              <AnimatePresence initial={false}>
-                <m.img
-                  key={photo.id}
+              {index === 0 ? (
+                <div className="hero-season-scene">
+                  <img
+                    src={photoById("summer").src}
+                    alt={season === "summer" ? photoById("summer").alt : ""}
+                    aria-hidden={season !== "summer"}
+                    width={1448}
+                    height={1086}
+                    fetchPriority="high"
+                    loading="eager"
+                    draggable="false"
+                  />
+                  <m.img
+                    className="hero-winter-layer"
+                    src={photoById("winter").src}
+                    alt={season === "winter" ? photoById("winter").alt : ""}
+                    aria-hidden={season !== "winter"}
+                    width={1448}
+                    height={1086}
+                    loading="eager"
+                    onLoad={() => setWinterReady(true)}
+                    ref={(image) => {
+                      if (image?.complete && image.naturalWidth > 0)
+                        setWinterReady(true);
+                    }}
+                    initial={false}
+                    animate={{
+                      opacity: season === "winter" && winterReady ? 1 : 0,
+                    }}
+                    transition={{
+                      duration: reduced ? 0 : 1.2,
+                      ease: "easeInOut",
+                    }}
+                    draggable="false"
+                  />
+                </div>
+              ) : (
+                <img
                   src={photo.src}
                   alt={photo.alt}
                   width={photo.width}
                   height={photo.height}
-                  fetchPriority={index === 0 ? "high" : undefined}
-                  loading={index === 0 ? "eager" : "lazy"}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: reduced ? 0 : 0.65 }}
+                  loading="lazy"
                   draggable="false"
                 />
-              </AnimatePresence>
+              )}
             </div>
           ))}
         </div>

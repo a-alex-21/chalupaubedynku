@@ -323,8 +323,16 @@ html {
   object-position: 50% 52%;
   user-select: none;
 }
-.hero-slide-summer img {
-  object-position: 50% 50%;
+.hero-season-scene {
+  position: absolute;
+  inset: 0;
+}
+.hero-slide .hero-season-scene img {
+  /* Match both seasons exactly and preserve the roof above the desktop crop. */
+  object-position: 50% 0%;
+}
+.hero-winter-layer {
+  will-change: opacity;
 }
 .hero-slide-sauna img {
   object-position: 68% 58%;
@@ -2953,7 +2961,7 @@ html {
     animation: none !important;
     scroll-behavior: auto !important;
   }
-  .hero-slide img,
+  .hero-slide img:not(.hero-winter-layer),
   .explorer-photo img {
     opacity: 1 !important;
   }

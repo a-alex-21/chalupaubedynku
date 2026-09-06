@@ -12,12 +12,12 @@ export const photos = [
   },
   {
     id: "winter",
-    src: image("chalupa-v-zime-editorial"),
+    src: image("chalupa-winter-matched"),
     title: "Chalupa v zimě",
     category: "Exteriér",
     alt: "Chalupa u Bedýnků pod sněhem",
-    width: 1536,
-    height: 1024,
+    width: 1448,
+    height: 1086,
   },
   {
     id: "living",

@@ -1,0 +1,11 @@
+{
+  "tool": "Built-in image generation",
+  "prompt": "Use case: lighting-weather. Edit target: supplied summer chalet photograph. Create its precisely registered WINTER counterpart for a summer/winter crossfade. Keep exact 4:3 framing, camera position, focal length, perspective, pixel positions and size of every permanent structure. Do NOT move, resize, crop or redesign the cottage, roofline, chimney, aerial, dish, two dormers, windows, door, sign, woodpile, small garden huts, paths, foreground round metal roof and wire structure, distant buildings or hills. Change ONLY season/weather: realistic settled fresh white snow blankets lawn, roof and garden structures, light snow on conifers, deciduous trees bare in identical positions, distant wooded hills wintery. Crisp bright winter daylight, pale blue sky, subtle blue snow shadows, realistic timber texture and restrained colors. The building and roof edges must align with the supplied photo when overlaid. No falling snow obscuring detail, no people, no added objects, no warm glowing windows, no holiday decorations, no new text. Preserve highest possible photographic detail. Return exact same 4:3 composition and proportions, ideally 1448x1086 or higher with identical framing.",
+  "source": "public/assets/img/chalupa-summer-sharp.jpg",
+  "output": "public/assets/img/chalupa-winter-matched.webp",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "note": "Seasonal edit preserving the summer viewpoint for an aligned hero crossfade; AI-generated winter interpretation."
+}
