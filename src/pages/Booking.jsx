@@ -181,7 +181,7 @@ export function Booking() {
                     Přijedete se psem?
                     <select name="Pes" defaultValue="Ne">
                       <option>Ne</option>
-                      <option>Ano, po domluvě</option>
+                      <option>Ano</option>
                     </select>
                   </label>
                 </div>
