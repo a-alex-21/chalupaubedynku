@@ -11,7 +11,19 @@ import {
   Plus,
   Minus,
 } from "lucide-react";
-import { photos } from "../data";
+import { photos as sitePhotos, image } from "../data";
+
+// The expanded panorama is for the hero; the gallery retains the closer photograph.
+const photos = sitePhotos.map((photo) =>
+  photo.id === "summer"
+    ? {
+        ...photo,
+        src: image("chalupa-summer-sharp"),
+        width: 1448,
+        height: 1086,
+      }
+    : photo,
+);
 
 export function Button({ children, href, className = "", ...props }) {
   const Tag = href ? "a" : "button";

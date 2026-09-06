@@ -2381,58 +2381,87 @@ html {
     padding-top: 25px;
   }
   .booking-bar-caption {
-    font-size: 8px;
-    gap: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 12px;
+    gap: 5px;
+    line-height: 1.5;
   }
   .booking-bar {
-    padding: 12px;
-    gap: 12px;
+    grid-template-columns: minmax(0, 1fr);
+    padding: 16px;
+    gap: 0;
   }
   .booking-date,
   .booking-guests {
-    padding: 5px;
-    gap: 8px;
+    padding: 14px 0;
+    gap: 12px;
+    border: 0;
   }
-  .booking-date > svg {
-    width: 16px;
+  .booking-date,
+  .booking-date:nth-child(2) {
+    border-bottom: 1px solid var(--line);
+  }
+  .booking-date > svg,
+  .booking-guests > svg {
+    width: 20px;
+    flex: 0 0 20px;
+  }
+  .booking-bar .field-label {
+    font-size: 12px;
+    margin-bottom: 4px;
   }
   .booking-date input {
-    font-size: 11px;
+    display: block;
+    box-sizing: border-box;
+    max-width: 100%;
+    min-height: 44px;
+    font-size: 16px;
+    line-height: 1.5;
+    color-scheme: light;
   }
-  .field-label {
-    font-size: 9px;
-  }
-  .booking-guests > svg {
-    width: 16px;
+  .booking-date input::-webkit-date-and-time-value {
+    text-align: left;
+    min-height: 1.5em;
   }
   .booking-guests > div {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
   }
   .booking-guests .field-label {
-    margin-bottom: 5px;
+    margin-bottom: 0;
   }
   .guest-control {
-    gap: 5px;
+    gap: 8px;
+    flex: 0 1 148px;
+    max-width: 148px;
   }
   .guest-control button {
-    width: 22px;
-    height: 22px;
+    width: 44px;
+    height: 44px;
   }
   .guest-control input {
-    font-size: 11px;
-    width: 25px;
+    font-size: 16px;
+    width: 32px;
+    min-width: 0;
+    min-height: 44px;
   }
   .booking-bar .button {
-    min-height: 51px;
-    padding: 12px;
-    font-size: 10px;
+    width: 100%;
+    margin: 4px 0 0;
+    min-height: 54px;
+    padding: 15px 18px;
+    font-size: 14px;
     gap: 12px;
   }
   .booking-bar .button svg {
-    width: 16px;
+    width: 20px;
   }
   .booking-bar-note {
-    font-size: 9px;
+    font-size: 12px;
+    line-height: 1.6;
   }
   .section {
     padding-block: 60px;
@@ -2937,9 +2966,7 @@ html {
   .booking-date > svg {
     display: none;
   }
-  .booking-bar-caption {
-    font-size: 7px;
-  }
+
   .price-row > span:last-child {
     font-size: 20px;
   }
