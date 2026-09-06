@@ -3,21 +3,21 @@ export const image = (name) => siteUrl(`assets/img/${name}.webp`);
 export const photos = [
   {
     id: "summer",
-    src: image("chalupa-summer-sharp"),
+    src: image("chalupa-summer-panorama"),
     title: "Chalupa v létě",
     category: "Exteriér",
     alt: "Chalupa u Bedýnků se zahradou v létě",
-    width: 1448,
-    height: 1086,
+    width: 1915,
+    height: 821,
   },
   {
     id: "winter",
-    src: image("chalupa-winter-matched"),
+    src: image("chalupa-winter-panorama"),
     title: "Chalupa v zimě",
     category: "Exteriér",
     alt: "Chalupa u Bedýnků pod sněhem",
-    width: 1448,
-    height: 1086,
+    width: 1918,
+    height: 820,
   },
   {
     id: "living",

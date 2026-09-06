@@ -1,0 +1,9 @@
+{
+  "tool": "Built-in image generation",
+  "summer": "Generative 21:9 expansion of the summer cottage photo; retain architecture, position full cottage center-right with breathing room above chimney and below foundation; natural meadow and forest continuation left for hero copy.",
+  "winter": "Use case: lighting-weather. Edit target is image1, the expanded panoramic summer cottage photograph. Image2 is a snow reference only. Create a precisely aligned winter counterpart of IMAGE1 preserving exact wide21:9 composition and pixel positions of cottage, chimney, dormers, windows, garden structures, trees, stone wall, foreground round metal roof and distant terrain. Change season and lighting only. Realistic settled white snow on roofs, meadow, garden and conifers; bare deciduous trees. Relight the WHOLE scene in cold diffused winter daylight with pale blue-gray sky. CRITICAL: timber and window frames must lose golden summer warmth; cooler desaturated weathered brown wood with blue-gray skylight and snow bounce in shadows. Still realistic textured brown wood, not blue paint. Cold blue-gray shadows and neutral white snow, no orange summer sunlight. No new structures, people, decorations, artificial lights or text. Keep every structure aligned for a summer/winter crossfade. Return exactly same wide dimensions and framing as image1.",
+  "outputs": [
+    "public/assets/img/chalupa-summer-panorama.webp",
+    "public/assets/img/chalupa-winter-panorama.webp"
+  ]
+}

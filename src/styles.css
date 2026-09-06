@@ -328,8 +328,8 @@ html {
   inset: 0;
 }
 .hero-slide .hero-season-scene img {
-  /* Match both seasons exactly and preserve the roof above the desktop crop. */
-  object-position: 50% 0%;
+  /* Panoramic seasonal pair: retain chimney and foundation on laptop screens. */
+  object-position: 62% 50%;
 }
 .hero-winter-layer {
   will-change: opacity;

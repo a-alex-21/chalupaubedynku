@@ -64,8 +64,8 @@ export function Hero() {
                     src={photoById("summer").src}
                     alt={season === "summer" ? photoById("summer").alt : ""}
                     aria-hidden={season !== "summer"}
-                    width={1448}
-                    height={1086}
+                    width={photoById("summer").width}
+                    height={photoById("summer").height}
                     fetchPriority="high"
                     loading="eager"
                     draggable="false"
@@ -75,8 +75,8 @@ export function Hero() {
                     src={photoById("winter").src}
                     alt={season === "winter" ? photoById("winter").alt : ""}
                     aria-hidden={season !== "winter"}
-                    width={1448}
-                    height={1086}
+                    width={photoById("winter").width}
+                    height={photoById("winter").height}
                     loading="eager"
                     onLoad={() => setWinterReady(true)}
                     ref={(image) => {
