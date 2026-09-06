@@ -1,0 +1,31 @@
+{
+  "name": "chalupa-u-bedynku",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5173",
+    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir .prerender && node scripts/prerender.mjs && node scripts/verify-build.mjs",
+    "preview": "vite preview --host 127.0.0.1 --port 4173",
+    "test": "vitest run",
+    "format": "prettier --write src scripts vite.config.js *.html"
+  },
+  "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.23",
+    "embla-carousel-react": "^8.6.0",
+    "lucide-react": "^1.41.0",
+    "motion": "^13.2.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "jsdom": "^29.1.1",
+    "prettier": "^3.9.6",
+    "vite": "^8.2.2",
+    "vitest": "^5.0.0"
+  }
+}

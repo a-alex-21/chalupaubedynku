@@ -66,7 +66,7 @@ if (navToggle && mainNav) {
   });
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 1040) {
+    if (window.innerWidth > 900) {
       closeNavigation();
     }
   });
@@ -140,6 +140,7 @@ if (bookingForm) {
   const updateStayLength = () => {
     if (!arrival.value || !departure.value || !nights) {
       departure?.setCustomValidity("");
+      if (nights) nights.value = "";
       return;
     }
 
@@ -168,6 +169,9 @@ if (bookingForm) {
     departure.addEventListener("change", updateStayLength);
   }
 
+  if (arrival.value) departure.min = addDays(arrival.value, minimumStay);
+  updateStayLength();
+
   bookingForm.addEventListener("submit", (event) => {
     updateStayLength();
 
@@ -184,3 +188,98 @@ if (bookingForm) {
     success.scrollIntoView({ block: "center" });
   }
 }
+
+// Seasonal stories keep all content local and update accessibly.
+const seasonStories = {
+  winter: {
+    image: 'assets/img/sjezdovka.webp',
+    alt: 'Zasněžené sjezdovky v Prkenném Dole',
+    label: 'Krkonoše v zimě',
+    title: 'Ráno na svah. Večer do tepla.',
+    copy: 'Ski areál Bret je hned vedle, Arakis přibližně 300 metrů od chalupy. Vyrazte na lyže, běžky nebo jen na procházku zasněženou krajinou.',
+    tags: ['Lyže a běžky', 'Pro rodiny s dětmi', 'Sauna po návratu']
+  },
+  summer: {
+    image: 'assets/img/chalupa-editorial.webp',
+    alt: 'Chalupa u Bedýnků uprostřed letní zeleně',
+    label: 'Krkonoše v létě',
+    title: 'Cestou necestou. A pak ke grilu.',
+    copy: 'Vydejte se do Rýchorského pralesa, na rozhlednu Elišku nebo po cyklotrasách Žacléřska. Děti zabaví pohádková vesnička vedle chalupy a večer se všichni potkáte pod pergolou.',
+    tags: ['Pěší výlety a kola', 'Pohádková vesnička', 'Večery u grilu']
+  }
+};
+document.querySelectorAll('[data-season]').forEach(button => {
+  button.addEventListener('click', () => {
+    const story = seasonStories[button.dataset.season];
+    if (!story) return;
+    document.querySelectorAll('[data-season]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    const photo = document.querySelector('.season-picture img');
+    photo.src = story.image;
+    photo.alt = story.alt;
+    document.querySelector('[data-season-label]').textContent = story.label;
+    document.querySelector('[data-season-title]').textContent = story.title;
+    document.querySelector('[data-season-copy]').textContent = story.copy;
+    document.querySelector('[data-season-tags]').replaceChildren(...story.tags.map(label => {
+      const tag = document.createElement('span');
+      tag.textContent = label;
+      return tag;
+    }));
+  });
+});
+
+// Native dialog provides modal focus management, Escape and focus restoration.
+if (typeof HTMLDialogElement !== 'undefined') {
+  document.querySelectorAll('.room picture, .gallery-grid picture').forEach(picture => {
+    const img = picture.querySelector('img');
+    if (!img) return;
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'gallery-trigger';
+    button.dataset.lightbox = '';
+    button.dataset.image = img.src.replace(/\.webp$/, '.jpg');
+    button.setAttribute('aria-label', `Zvětšit fotografii: ${img.alt}`);
+    picture.before(button);
+    button.append(picture);
+  });
+  const galleryItems = [...document.querySelectorAll('[data-lightbox]')];
+  if (galleryItems.length) {
+    const dialog = document.createElement('dialog');
+    dialog.className = 'lightbox';
+    dialog.setAttribute('aria-label', 'Fotogalerie chalupy');
+    dialog.innerHTML = '<button type="button" class="lightbox-close" aria-label="Zavřít galerii" autofocus>×</button><img alt=""><p class="lightbox-caption" aria-live="polite"></p><div class="lightbox-controls"><button type="button" data-prev aria-label="Předchozí fotografie">←</button><button type="button" data-next aria-label="Další fotografie">→</button></div>';
+    document.body.append(dialog);
+    let activeIndex = 0;
+    const showPhoto = index => {
+      activeIndex = (index + galleryItems.length) % galleryItems.length;
+      const item = galleryItems[activeIndex];
+      const img = item.querySelector('img');
+      dialog.querySelector('img').src = item.dataset.image || item.href;
+      dialog.querySelector('img').alt = img.alt;
+      dialog.querySelector('.lightbox-caption').textContent = `${activeIndex + 1} / ${galleryItems.length} — ${img.alt}`;
+    };
+    galleryItems.forEach((item, index) => item.addEventListener('click', event => {
+      event.preventDefault();
+      showPhoto(index);
+      dialog.showModal();
+      document.body.classList.add('gallery-open');
+    }));
+    dialog.querySelector('.lightbox-close').addEventListener('click', () => dialog.close());
+    dialog.querySelector('[data-prev]').addEventListener('click', () => showPhoto(activeIndex - 1));
+    dialog.querySelector('[data-next]').addEventListener('click', () => showPhoto(activeIndex + 1));
+    dialog.addEventListener('keydown', event => {
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        event.preventDefault();
+        showPhoto(activeIndex + (event.key === 'ArrowRight' ? 1 : -1));
+      }
+    });
+    dialog.addEventListener('click', event => {
+      if (event.target === dialog) {
+        const rect = dialog.getBoundingClientRect();
+        if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
+      }
+    });
+    dialog.addEventListener('close', () => document.body.classList.remove('gallery-open'));
+  }
+}
+
+document.querySelectorAll('[data-year]').forEach(element => { element.textContent = new Date().getFullYear(); });

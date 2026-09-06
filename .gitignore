@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.prerender/
+.vite/
+.DS_Store
+*.local

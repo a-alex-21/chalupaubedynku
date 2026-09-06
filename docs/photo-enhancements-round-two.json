@@ -1,0 +1,75 @@
+[
+  {
+    "name": "loznice-1",
+    "prompt": "Edit the supplied real property photograph for a professional Czech mountain chalet website. Photorealistic architectural photography, clean natural lighting, neutral whites, natural warm timber, subtle greens, no HDR or oversaturation. Preserve the actual architecture, room size, furniture types and layout, windows and surroundings. Do not invent amenities, enlarge rooms or replace furnishings. Correct perspective and lens distortion modestly; improve detail and composition. No added people, watermarks or text. Use case: lighting-weather. Landscape 3:2 framing with straighter verticals and a less tilted view of this same small attic room. Keep double bed on left and dark wood bunk bed on right, both bunk levels, exact windows, radiator, bedside table and sloped ceiling. Neatly prepare the existing beds with simple white linens and pillows, consistent with supplied bedding at this rental. Natural daylight, soft shadows, authentic compact room.",
+    "source": "/Users/alexaugusta/.codex/generated_images/01a075fd-33fb-7d52-89f7-18ab0b2f58a3/exec-1f4bb2b0-b7d9-44fb-bdd6-e38dec6bd0db.png",
+    "webp": "public/assets/img/loznice-1-editorial.webp",
+    "jpeg": "public/assets/img/loznice-1-editorial.jpg",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "name": "loznice-2",
+    "prompt": "Edit the supplied real property photograph for a professional Czech mountain chalet website. Photorealistic architectural photography, clean natural lighting, neutral whites, natural warm timber, subtle greens, no HDR or oversaturation. Preserve the actual architecture, room size, furniture types and layout, windows and surroundings. Do not invent amenities, enlarge rooms or replace furnishings. Correct perspective and lens distortion modestly; improve detail and composition. No added people, watermarks or text. Use case: lighting-weather. Landscape 3:2, gently straighten this same view. Keep the double bed at rear, two separate beds on right, chest of drawers, mirror, round table, chair, red curtains and sloped ceiling. All bed positions and room dimensions unchanged. Neatly made plain white bedding, clear natural daylight, recovered shadow detail. Keep it a modest real chalet bedroom.",
+    "source": "/Users/alexaugusta/.codex/generated_images/01a075fd-33fb-7d52-89f7-18ab0b2f58a3/exec-b8dc5c06-f78f-4c2a-a1a2-a01b678d7edb.png",
+    "webp": "public/assets/img/loznice-2-editorial.webp",
+    "jpeg": "public/assets/img/loznice-2-editorial.jpg",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "name": "loznice-3",
+    "prompt": "Edit the supplied real property photograph for a professional Czech mountain chalet website. Photorealistic architectural photography, clean natural lighting, neutral whites, natural warm timber, subtle greens, no HDR or oversaturation. Preserve the actual architecture, room size, furniture types and layout, windows and surroundings. Do not invent amenities, enlarge rooms or replace furnishings. Correct perspective and lens distortion modestly; improve detail and composition. No added people, watermarks or text. Use case: lighting-weather. Landscape 3:2 with a slightly less downward-tilted professional composition, only showing the existing room. Preserve all four sleeping places and their exact arrangement, timber bed frames, bedside tables, lamps, wardrobe at right, roof window and sloping ceiling. Straighten and neatly smooth existing white bedding. Brighter soft daylight, realistic wood and plaster textures. Do not add space.",
+    "source": "/Users/alexaugusta/.codex/generated_images/01a075fd-33fb-7d52-89f7-18ab0b2f58a3/exec-3063f8fc-37d0-43b2-98f8-81a1822c1000.png",
+    "webp": "public/assets/img/loznice-3-editorial.webp",
+    "jpeg": "public/assets/img/loznice-3-editorial.jpg",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "name": "kuchyn",
+    "prompt": "Use case: lighting-weather. Edit target: this actual chalet kitchen photograph. Professional realistic hospitality photo, landscape 3:2. Keep exact white cabinets and layout, black countertop, fridge left, all three windows, oven, extractor, exposed wood ceiling beams, floor tiles and beverage equipment right. Improve perspective from the same corner, straighten verticals and use a less cramped framing without inventing additional space. Correct strong yellow cast, natural soft daylight, white cabinetry actually white, warm realistic wood, detailed surfaces, balanced shadows. Clean and tidy existing worktops, retain permanent appliances. No redesign, no new furniture, no extra windows, no people, no text, no HDR.",
+    "source": "/Users/alexaugusta/.codex/generated_images/01a075fd-33fb-7d52-89f7-18ab0b2f58a3/exec-90238ab9-8888-4022-bba8-b0a3a8356feb.png",
+    "webp": "public/assets/img/kuchyn-editorial.webp",
+    "jpeg": "public/assets/img/kuchyn-editorial.jpg",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "name": "sauna",
+    "prompt": "Use case: lighting-weather. Edit target: actual small wooden chalet sauna photographed through its open door. Professional architectural photo, portrait 4:5, slightly straighter and more centered doorway view with the existing bench clearly visible. Keep exact sauna dimensions, single visible bench, door and wood handle, timber paneling and floor slats. Do not invent a heater, extra tiers, large spa area or amenities. Natural pale warm pine tones, soften harsh highlights and orange cast, clean realistic wood grain, balanced exposure revealing interior shadows. No people, text, artificial steam or decorative objects.",
+    "source": "/Users/alexaugusta/.codex/generated_images/01a075fd-33fb-7d52-89f7-18ab0b2f58a3/exec-42040f2d-5edd-4ef0-b5dd-4a69f963ee0c.png",
+    "webp": "public/assets/img/sauna-editorial.webp",
+    "jpeg": "public/assets/img/sauna-editorial.jpg",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "name": "chalupa-v-zime",
+    "prompt": "Use case: lighting-weather. Edit target: actual snow-covered chalet exterior. Landscape 3:2 professional architecture photography. Preserve exact chalet, roof and two dormers, chimney and dish, all windows, woodpile, garden structures and surrounding landscape. Slightly improve framing and straighten perspective while staying close to original view. Soft clear winter daylight, neutral white detailed snow rather than blue casts, natural warm timber, restrained pale blue sky, crisp realistic branches, balanced shadows. No invented scenery or mountains, no alterations to building, no new structures, no people, no excessive HDR. Match a restrained premium mountain rental website.",
+    "source": "/Users/alexaugusta/.codex/generated_images/01a075fd-33fb-7d52-89f7-18ab0b2f58a3/exec-543a9e94-f1e7-45ca-aecc-26d8c062f6df.png",
+    "correctionPrompt": "Precise text correction only to the attached chalet winter photograph. The small wooden sign above the front door has corrupted lettering. Change only its lettering to exactly 'CHALUPA' on the first line and 'U BEDÝNKŮ' on the second line, in modest rustic engraved cream lettering fitted naturally to that existing small sign. Keep sign size and position unchanged. Keep every other pixel visually unchanged: chalet, roof, snow, sky, chimney, woodpile, perspective and photographic grading. Do not add any other text or branding.",
+    "webp": "public/assets/img/chalupa-v-zime-editorial.webp",
+    "jpeg": "public/assets/img/chalupa-v-zime-editorial.jpg",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "name": "pohadkova-vesnicka",
+    "prompt": "Use case: lighting-weather. Edit target: actual wooden signpost in a Czech fairy-tale playground. Portrait 3:4 professional travel photograph. Preserve this exact signpost, carved wood arrows and their directions, roof, background chalet, stone wall, conifers and garden. Improve clarity and exposure with soft natural daylight, realistic warm wood and restrained greens. Slightly straighten perspective, do not redesign scene. Critically preserve Czech lettering without inventions; signs read from top: 'Ke Sněhurce' left, 'Za drakem' right, 'K Rumcajsovi' left, 'K pokladu' right, 'Za Bábou Jagou' left, 'Do zámku' right, 'Do Čertovy chýše' left, 'K Hájovně' left, 'Do mlejna' left, 'Perníková chaloupka' left. Preserve hand-carved decorative style. No extra signs, objects or people. Natural photographic finish, not illustration.",
+    "source": "/Users/alexaugusta/.codex/generated_images/01a075fd-33fb-7d52-89f7-18ab0b2f58a3/exec-dea032f8-ef21-434e-b898-4629fe25f411.png",
+    "webp": "public/assets/img/pohadkova-vesnicka-editorial.webp",
+    "jpeg": "public/assets/img/pohadkova-vesnicka-editorial.jpg",
+    "width": 1085,
+    "height": 1450
+  },
+  {
+    "name": "sjezdovka",
+    "prompt": "Use case: lighting-weather. Edit target: real ski slope and valley photograph in Prkenny Dul. Landscape 3:2 premium realistic travel photo. Preserve precise valley topography, rolling forested hills, actual buildings, ski lift poles, slope and foreground branches. Improve fine detail and exposure, clean neutral snow whites with subtle blue-gray shadows, atmospheric depth and soft winter daylight. Maintain the original overcast winter conditions with a slightly brighter natural sky. Crop excessive empty foreground a little for a more balanced view; no invented dramatic mountains, lifts, slopes, skiers or buildings. No text, oversaturation or artificial HDR.",
+    "source": "/Users/alexaugusta/.codex/generated_images/01a075fd-33fb-7d52-89f7-18ab0b2f58a3/exec-3e95b51f-f1ec-4f17-a2f1-4858a29b15f4.png",
+    "webp": "public/assets/img/sjezdovka-editorial.webp",
+    "jpeg": "public/assets/img/sjezdovka-editorial.jpg",
+    "width": 1536,
+    "height": 1024
+  }
+]

@@ -1,0 +1,102 @@
+{
+  "pokyny": [
+    {
+      "id": "kontakt",
+      "title": "Příjezd, odjezd a předání klíčů",
+      "paragraphs": [
+        "Ubytování začíná v den příjezdu od 16:00. Chalupu je potřeba v den odjezdu opustit do 10:00.",
+        "Přibližně hodinu před příjezdem kontaktujte správcovou, domluvíte si předání klíčů, kauce a další praktické věci. Ozvěte se jí i při zdržení na cestě."
+      ]
+    },
+    {
+      "id": "informace-1",
+      "title": "Kontakty a adresa",
+      "paragraphs": [
+        "Adresa objektu: Prkenný Důl 67, 542 01 Žacléř. GPS chalupy: 50.64352N, 15.90526E.",
+        "Majitelé: Ondřej Najman, +420 720 657 935 a Adam Najman, +420 776 893 644. Správcová: Monika Eflerová, +420 604 671 546."
+      ]
+    },
+    {
+      "id": "platby",
+      "title": "Platby na místě",
+      "paragraphs": [
+        "Při příjezdu se platí vratná kauce 5 000 Kč. Dále se hradí spotřeba elektřiny, místní poplatek za pobyt a případný poplatek za psa.",
+        "V ceně pronájmu je 0,5 m3 dřeva a spotřeba vody. Při větší spotřebě dřeva se doplácí. V zimě bývá kvůli vytápění spotřeba energie vyšší."
+      ]
+    },
+    {
+      "id": "vybaveni",
+      "title": "Co je připravené",
+      "paragraphs": [
+        "Povlečení bude připravené. Počet osob potvrďte nejpozději týden před pobytem.",
+        "V chalupě nejsou k dispozici ručníky, kromě malých ručníků u umyvadel. Vezměte si proto vlastní. Připravené jsou základní čisticí prostředky."
+      ]
+    },
+    {
+      "id": "odjezd",
+      "title": "Úklid, odpady a péče o chalupu",
+      "paragraphs": [
+        "Při odjezdu uveďte dům do původního, čistého stavu. Během pobytu používejte vybavení šetrně a případné škody hned nahlaste.",
+        "Udržujte pořádek, průběžně vynášejte odpad do kontejneru a odpad třiďte. Kouření v objektu není povoleno. Nábytek a zařízení nepřemisťujte."
+      ]
+    },
+    {
+      "id": "venek",
+      "title": "Zahrada, lyže, kola a pohádková vesnička",
+      "paragraphs": [
+        "Při výletech zamykejte dům a uklízejte zahradní nábytek, podsedáky a deštník. Kola a lyže ukládejte do boudy, která slouží jako lyžárna a kolárna, případně na venkovní nosiče u stěny.",
+        "V zimě je nutné průběžně odklízet sníh ze schodů. Za děti na herních prvcích a trampolíně odpovídají rodiče, používání je na vlastní riziko."
+      ]
+    }
+  ],
+  "provozni-rad": [
+    {
+      "id": "odpovednost",
+      "title": "Vybavení, inventář a děti",
+      "paragraphs": [
+        "Hosté ručí za vybavení a inventář chalupy. Pokud dojde k poškození majetku, host je povinen škodu uhradit.",
+        "Hosté zároveň zodpovídají za bezpečnost svých nezletilých dětí v chalupě i na přilehlém pozemku."
+      ]
+    },
+    {
+      "id": "zakazy",
+      "title": "Kouření, počet osob a kontroly",
+      "paragraphs": [
+        "V celém objektu platí přísný zákaz kouření. Důvodem k ukončení pobytu může být pobyt nenahlášených osob, porušení zákazu kouření nebo ničení inventáře.",
+        "Pronajímatel nebo pověřená osoba může během pobytu zkontrolovat stav kotle, kamen, dodržování zákazu kouření a počet osob v chalupě."
+      ]
+    },
+    {
+      "id": "odpady",
+      "title": "ČOV, odpady a toalety",
+      "paragraphs": [
+        "Chalupa je napojená na čističku odpadních vod. Nepoužívejte agresivní čisticí nebo dezinfekční prostředky, například Savo nebo čističe odpadů.",
+        "Do WC a odpadů nepatří pevný odpad, zbytky jídel, plenky, hygienické vložky, vlhčené ubrousky, fólie ani podobné materiály."
+      ]
+    },
+    {
+      "id": "topeni",
+      "title": "Otevřený oheň, kotel a bojler",
+      "paragraphs": [
+        "Ve všech prostorách chalupy je přísný zákaz manipulace s otevřeným ohněm mimo místa k tomu určená.",
+        "Nemanipulujte s elektrickým kotlem na vytápění ani s bojlerem na vodu."
+      ]
+    },
+    {
+      "id": "mazlicci",
+      "title": "Přezouvání a domácí mazlíčci",
+      "paragraphs": [
+        "V celé chalupě se přezouvejte. Domácí mazlíčky nepouštějte do postelí ani na gauče.",
+        "V ceně pobytu jsou lůžkoviny, tekuté mýdlo, základní toaletní papír na začátek pobytu, kuchyňské utěrky, odpadkové pytle a úklidové prostředky."
+      ]
+    },
+    {
+      "id": "predani",
+      "title": "Předání chalupy a klíče",
+      "paragraphs": [
+        "V den odjezdu se chalupa předává ve stavu, v jakém byla předána v den příjezdu. Během pobytu prosím udržujte pořádek, čisticí potřeby a vysavač jsou k dispozici.",
+        "K dispozici je 1 klíč. Za ztrátu 1 ks klíče se účtuje 100 Kč."
+      ]
+    }
+  ]
+}
