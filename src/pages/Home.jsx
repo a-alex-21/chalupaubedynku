@@ -1,3 +1,4 @@
+import { siteUrl } from "../urls";
 import {
   BedDouble,
   Users,
@@ -39,7 +40,9 @@ export function Home() {
           }
           description="Prkenný Důl u Žacléře. Tři ložnice, dvě koupelny a společné zázemí pro rodiny i skupiny přátel."
         >
-          <TextLink href="/ubytovani.html">Vybavení a pokoje</TextLink>
+          <TextLink href={siteUrl("/ubytovani.html")}>
+            Vybavení a pokoje
+          </TextLink>
         </SectionHeading>
         <div className="amenities-strip">
           {[
@@ -129,7 +132,9 @@ export function Home() {
                 ))}
               </div>
             </div>
-            <TextLink href="/aktivity.html">Všechny aktivity</TextLink>
+            <TextLink href={siteUrl("/aktivity.html")}>
+              Všechny aktivity
+            </TextLink>
           </div>
         </div>
       </section>
@@ -141,7 +146,7 @@ export function Home() {
             Podrobnosti k pobytu najdete také
             <br />v pokynech před příjezdem.
           </p>
-          <TextLink href="/pokyny.html">Pokyny pro hosty</TextLink>
+          <TextLink href={siteUrl("/pokyny.html")}>Pokyny pro hosty</TextLink>
         </div>
         <FAQ items={faqs} />
       </section>

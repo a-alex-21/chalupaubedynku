@@ -1,3 +1,4 @@
+import { siteUrl } from "../urls";
 import { useEffect, useState } from "react";
 import {
   ArrowUpRight,
@@ -27,7 +28,10 @@ export function Booking() {
     const date = localDate();
     setToday(date);
     setStay(readBookingQuery(window.location.search, date));
-    setNext(`${window.location.origin}/rezervace.html?odeslano=1`);
+    setNext(
+      new URL(siteUrl("rezervace.html?odeslano=1"), window.location.origin)
+        .href,
+    );
     setSent(
       new URLSearchParams(window.location.search).get("odeslano") === "1",
     );
@@ -89,7 +93,7 @@ export function Booking() {
                 Ozveme se s dostupností a cenou. Rezervace platí až po našem
                 potvrzení.
               </p>
-              <a className="text-link" href="/">
+              <a className="text-link" href={siteUrl("/")}>
                 Zpět na chalupu <ArrowUpRight size={16} />
               </a>
             </div>

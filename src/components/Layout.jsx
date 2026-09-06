@@ -1,3 +1,4 @@
+import { siteUrl } from "../urls";
 import { useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { ArrowUpRight, Menu, X, Mountain, ArrowUp, Phone } from "lucide-react";
@@ -6,7 +7,11 @@ import { Button } from "./Shared";
 
 function Brand() {
   return (
-    <a className="brand" href="/" aria-label="Chalupa u Bedýnků – úvod">
+    <a
+      className="brand"
+      href={siteUrl("/")}
+      aria-label="Chalupa u Bedýnků – úvod"
+    >
       <Mountain aria-hidden="true" strokeWidth={1.25} />
       <span>
         u Bedýnků<small>PRKENNÝ DŮL · KRKONOŠE</small>
@@ -19,7 +24,7 @@ export function Layout({ page, children }) {
   const links = navigation.map(([route, label]) => (
     <a
       key={route}
-      href={route === "index" ? "/" : `/${route}.html`}
+      href={siteUrl(route === "index" ? "/" : `/${route}.html`)}
       aria-current={page === route ? "page" : undefined}
     >
       {label}
@@ -44,7 +49,10 @@ export function Layout({ page, children }) {
             >
               <Phone size={16} />
             </a>
-            <Button className="header-booking" href="/rezervace.html">
+            <Button
+              className="header-booking"
+              href={siteUrl("/rezervace.html")}
+            >
               Poptat termín
               <ArrowUpRight size={17} />
             </Button>
@@ -72,7 +80,7 @@ export function Layout({ page, children }) {
                   </Dialog.Close>
                   <nav aria-label="Mobilní navigace">
                     {links}
-                    <a href="/rezervace.html">
+                    <a href={siteUrl("/rezervace.html")}>
                       Poptat termín <ArrowUpRight size={20} />
                     </a>
                   </nav>
@@ -104,15 +112,15 @@ export function Layout({ page, children }) {
           </div>
           <div>
             <h3>Chalupa</h3>
-            <a href="/ubytovani.html">Ubytování</a>
-            <a href="/aktivity.html">Aktivity a výlety</a>
-            <a href="/cenik.html">Ceník</a>
+            <a href={siteUrl("/ubytovani.html")}>Ubytování</a>
+            <a href={siteUrl("/aktivity.html")}>Aktivity a výlety</a>
+            <a href={siteUrl("/cenik.html")}>Ceník</a>
           </div>
           <div>
             <h3>Před pobytem</h3>
-            <a href="/pokyny.html">Informace před příjezdem</a>
-            <a href="/provozni-rad.html">Provozní řád</a>
-            <a href="/rezervace.html">
+            <a href={siteUrl("/pokyny.html")}>Informace před příjezdem</a>
+            <a href={siteUrl("/provozni-rad.html")}>Provozní řád</a>
+            <a href={siteUrl("/rezervace.html")}>
               Poptávka pobytu <ArrowUpRight size={13} />
             </a>
           </div>

@@ -1,3 +1,4 @@
+import { siteUrl } from "./urls";
 import { LazyMotion, domAnimation } from "motion/react";
 import { Layout } from "./components/Layout";
 import { GalleryProvider } from "./components/Shared";
@@ -33,7 +34,7 @@ export default function App({ page = "index" }) {
           {pages[page] || (
             <div className="container page-heading">
               <h1>Stránka nenalezena.</h1>
-              <a href="/">Zpět na chalupu</a>
+              <a href={siteUrl("/")}>Zpět na chalupu</a>
             </div>
           )}
         </Layout>

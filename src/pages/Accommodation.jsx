@@ -1,3 +1,4 @@
+import { siteUrl } from "../urls";
 import { BedDouble, ArrowUpRight } from "lucide-react";
 import {
   PageHeading,
@@ -87,7 +88,9 @@ export function Accommodation() {
               Správcovou kontaktujte přibližně hodinu před příjezdem. Vlastní
               ručníky si vezměte s sebou.
             </p>
-            <TextLink href="/pokyny.html">Informace před příjezdem</TextLink>
+            <TextLink href={siteUrl("/pokyny.html")}>
+              Informace před příjezdem
+            </TextLink>
           </article>
           <article>
             <span className="eyebrow">PODMÍNKY</span>
@@ -96,7 +99,9 @@ export function Accommodation() {
               Vratná kauce se skládá při příjezdu. Energie a poplatek z pobytu
               se účtují zvlášť.
             </p>
-            <TextLink href="/provozni-rad.html">Provozní řád</TextLink>
+            <TextLink href={siteUrl("/provozni-rad.html")}>
+              Provozní řád
+            </TextLink>
           </article>
         </div>
       </section>

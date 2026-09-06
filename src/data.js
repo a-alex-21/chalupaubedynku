@@ -1,4 +1,5 @@
-export const image = (name) => `/assets/img/${name}.webp`;
+import { siteUrl } from "./urls";
+export const image = (name) => siteUrl(`assets/img/${name}.webp`);
 export const photos = [
   {
     id: "summer",

@@ -13,6 +13,7 @@ const pages = [
   "provozni-rad",
 ];
 export default defineConfig({
+  base: process.env.SITE_BASE || "/",
   plugins: [react()],
   build: {
     rollupOptions: {

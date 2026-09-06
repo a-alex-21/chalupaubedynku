@@ -12,6 +12,7 @@ const pages = [
   "pokyny",
   "provozni-rad",
 ];
+const base = process.env.SITE_BASE || "/";
 const documents = new Map();
 for (const page of pages) {
   const html = readFileSync(`dist/${page}.html`, "utf8");
@@ -40,19 +41,27 @@ for (const page of pages) {
 }
 for (const page of pages) {
   const document = documents.get(`/${page}.html`);
-  for (const element of document.querySelectorAll("[href],[src]")) {
-    const value = element.getAttribute("href") || element.getAttribute("src");
+  for (const element of document.querySelectorAll("[href],[src],[action]")) {
+    const value =
+      element.getAttribute("href") ||
+      element.getAttribute("src") ||
+      element.getAttribute("action");
     if (!value || /^(https?:|mailto:|tel:|data:)/.test(value)) continue;
-    const url = new URL(value, `https://local.test/${page}.html`);
+    const url = new URL(value, `https://local.test${base}${page}.html`);
+    assert.ok(
+      url.pathname.startsWith(base),
+      `${page}: outside site base: ${value}`,
+    );
+    const pathname = "/" + url.pathname.slice(base.length);
     const file = resolve(
       "dist",
-      `.${url.pathname === "/" ? "/index.html" : url.pathname}`,
+      `.${pathname === "/" ? "/index.html" : pathname}`,
     );
     assert.ok(existsSync(file), `${page}: missing ${value}`);
-    if (url.hash && documents.has(url.pathname))
+    if (url.hash && documents.has(pathname))
       assert.ok(
         documents
-          .get(url.pathname)
+          .get(pathname)
           .getElementById(decodeURIComponent(url.hash.slice(1))),
         `${page}: missing anchor ${value}`,
       );

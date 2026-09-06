@@ -52,3 +52,21 @@ The hero form transfers dates and guest count through URL parameters. The enquir
 Tests cover date/DST boundaries, capacity and query validation, hero season switching, photo filters, modal keyboard navigation and focus restoration, room tabs, pricing, activity filters, and form prefilling. All routes are rendered at build time. Browser visual/drag testing requires a connected browser; none was available during this session.
 
 Photo edit prompts and provenance are in `docs/image-enhancements.md`. The root `assets/img` directory retains the earlier source photos; the Vite build serves their `public/assets/img` copies.
+
+## GitHub Pages
+
+The workflow in `.github/workflows/deploy.yml` tests, builds, and publishes
+`dist/` on pushes to `main`, or when run manually from the Actions tab.
+In repository Settings → Pages, select **GitHub Actions** as the source.
+The workflow reads the site's base path from GitHub Pages, so it supports
+both the repository URL and a configured custom domain.
+
+To verify the repository URL locally:
+
+```sh
+SITE_BASE=/chalupaubedynku/ npm run build
+SITE_BASE=/chalupaubedynku/ npm run preview
+```
+
+Open the preview at `http://127.0.0.1:4173/chalupaubedynku/`.
+Ordinary local development and builds retain the root path by default.

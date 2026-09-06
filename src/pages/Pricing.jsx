@@ -1,3 +1,4 @@
+import { siteUrl } from "../urls";
 import { useState } from "react";
 import { ArrowUpRight, Info } from "lucide-react";
 import { prices, money } from "../data";
@@ -90,7 +91,7 @@ export function Pricing() {
             Bez energií a místních poplatků. Konečnou cenu a dostupnost
             potvrdíme.
           </p>
-          <Button href={`/rezervace.html?people=${people}`}>
+          <Button href={siteUrl(`/rezervace.html?people=${people}`)}>
             Poptat pobyt
             <ArrowUpRight size={17} />
           </Button>

@@ -1,3 +1,4 @@
+import { siteUrl } from "../urls";
 import { useEffect, useState } from "react";
 import { ArrowUpRight, CalendarDays, Users, Minus, Plus } from "lucide-react";
 import { localDate, addDays } from "../booking";
@@ -13,7 +14,11 @@ export function BookingBar() {
         <span>VÁŠ POBYT</span>
         <span>Nezávazná poptávka · celá chalupa</span>
       </div>
-      <form className="booking-bar" action="/rezervace.html" method="GET">
+      <form
+        className="booking-bar"
+        action={siteUrl("/rezervace.html")}
+        method="GET"
+      >
         <label className="booking-date">
           <CalendarDays size={19} />
           <span>

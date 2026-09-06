@@ -1,3 +1,4 @@
+import { siteUrl } from "../urls";
 import { createContext, useContext, useEffect, useState, useRef } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import {
@@ -48,7 +49,7 @@ export function PageHeading({ eyebrow, title, description }) {
   return (
     <header className="page-heading container">
       <div className="breadcrumb">
-        <a href="/">Chalupa</a>
+        <a href={siteUrl("/")}>Chalupa</a>
         <span>/</span>
         {eyebrow || title}
       </div>
@@ -246,7 +247,7 @@ export function CTA() {
         <h2>Vyberte si termín.</h2>
         <p>Dostupnost a konečnou cenu potvrdíme osobně.</p>
       </div>
-      <Button href="/rezervace.html">
+      <Button href={siteUrl("/rezervace.html")}>
         Poptat pobyt <ArrowUpRight size={19} />
       </Button>
     </section>
