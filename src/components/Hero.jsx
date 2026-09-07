@@ -1,111 +1,79 @@
-import { useEffect, useState } from "react";
-import useEmblaCarousel from "embla-carousel-react";
-import { m, useReducedMotion } from "motion/react";
-import {
-  ArrowUpRight,
-  ArrowLeft,
-  ArrowRight,
-  Sun,
-  Snowflake,
-  Images,
-  MapPin,
-  MoveHorizontal,
-} from "lucide-react";
+import { useState, useRef } from "react";
+import { m, useReducedMotion, useInView } from "motion/react";
+import { ArrowUpRight, Sun, Snowflake, Images, MapPin } from "lucide-react";
 import { photoById } from "../data";
-import { Photo, useGallery } from "./Shared";
+import { useGallery } from "./Shared";
 
 export function Hero() {
   const [season, setSeason] = useState("summer");
-  const [selected, setSelected] = useState(0);
   const [winterReady, setWinterReady] = useState(false);
   const reduced = useReducedMotion();
-  const [viewport, embla] = useEmblaCarousel({
-    loop: true,
-    duration: reduced ? 0 : 35,
-  });
+  const sceneRef = useRef(null);
+  const inView = useInView(sceneRef);
   const openGallery = useGallery();
-  const slides = [
-    photoById(season),
-    photoById("living"),
-    photoById("pergola"),
-    photoById("sauna"),
-  ];
-  useEffect(() => {
-    if (!embla) return;
-    const sync = () => setSelected(embla.selectedScrollSnap());
-    sync();
-    embla.on("select", sync);
-    return () => embla.off("select", sync);
-  }, [embla]);
-  const selectSeason = (value) => {
-    setSeason(value);
-    embla?.scrollTo(0);
-  };
   return (
     <section
-      className="hero"
+      ref={sceneRef}
+      className={`hero hero-season-${season} ${reduced || !inView ? "scene-paused" : ""}`}
       aria-label="Chalupa u Bedýnků – prohlídka"
-      aria-roledescription="karusel"
     >
-      <div className="hero-viewport" ref={viewport}>
-        <div className="hero-track">
-          {slides.map((photo, index) => (
-            <div
-              className={`hero-slide hero-slide-${photo.id}`}
-              key={index}
-              role="group"
-              aria-roledescription="snímek"
-              aria-label={`${index + 1} ze ${slides.length}: ${photo.title}`}
-              aria-hidden={index !== selected}
-            >
-              {index === 0 ? (
-                <div className="hero-season-scene">
-                  <img
-                    src={photoById("summer").src}
-                    alt={season === "summer" ? photoById("summer").alt : ""}
-                    aria-hidden={season !== "summer"}
-                    width={photoById("summer").width}
-                    height={photoById("summer").height}
-                    fetchPriority="high"
-                    loading="eager"
-                    draggable="false"
-                  />
-                  <m.img
-                    className="hero-winter-layer"
-                    src={photoById("winter").src}
-                    alt={season === "winter" ? photoById("winter").alt : ""}
-                    aria-hidden={season !== "winter"}
-                    width={photoById("winter").width}
-                    height={photoById("winter").height}
-                    loading="eager"
-                    onLoad={() => setWinterReady(true)}
-                    ref={(image) => {
-                      if (image?.complete && image.naturalWidth > 0)
-                        setWinterReady(true);
-                    }}
-                    initial={false}
-                    animate={{
-                      opacity: season === "winter" && winterReady ? 1 : 0,
-                    }}
-                    transition={{
-                      duration: reduced ? 0 : 1.2,
-                      ease: "easeInOut",
-                    }}
-                    draggable="false"
-                  />
-                </div>
-              ) : (
-                <img
-                  src={photo.src}
-                  alt={photo.alt}
-                  width={photo.width}
-                  height={photo.height}
-                  loading="lazy"
-                  draggable="false"
+      <div
+        className="hero-slide hero-main-photo"
+        role="group"
+        aria-label={photoById(season).title}
+      >
+        <div className="hero-season-scene">
+          <img
+            src={photoById("summer").src}
+            alt={season === "summer" ? photoById("summer").alt : ""}
+            aria-hidden={season !== "summer"}
+            width={photoById("summer").width}
+            height={photoById("summer").height}
+            fetchPriority="high"
+            loading="eager"
+            draggable="false"
+          />
+          <m.img
+            className="hero-winter-layer"
+            src={photoById("winter").src}
+            alt={season === "winter" ? photoById("winter").alt : ""}
+            aria-hidden={season !== "winter"}
+            width={photoById("winter").width}
+            height={photoById("winter").height}
+            loading="eager"
+            onLoad={() => setWinterReady(true)}
+            ref={(image) => {
+              if (image?.complete && image.naturalWidth > 0)
+                setWinterReady(true);
+            }}
+            initial={false}
+            animate={{
+              opacity: season === "winter" && winterReady ? 1 : 0,
+            }}
+            transition={{
+              duration: reduced ? 0 : 1.2,
+              ease: "easeInOut",
+            }}
+            draggable="false"
+          />
+          <div
+            className={`season-atmosphere ${season === "winter" && winterReady ? "is-winter" : ""}`}
+            aria-hidden="true"
+          >
+            <div className="snowfall">
+              {Array.from({ length: 22 }, (_, i) => (
+                <i
+                  key={i}
+                  style={{
+                    "--x": `${(i * 47) % 100}%`,
+                    "--delay": `${-i * 1.7}s`,
+                    "--duration": `${9 + (i % 7)}s`,
+                    "--size": `${2 + (i % 4)}px`,
+                  }}
                 />
-              )}
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
       <div className="hero-shade" />
@@ -116,14 +84,14 @@ export function Hero() {
         <div className="season-switch" role="group" aria-label="Roční období">
           <button
             aria-pressed={season === "summer"}
-            onClick={() => selectSeason("summer")}
+            onClick={() => setSeason("summer")}
           >
             <Sun size={15} />
             Léto
           </button>
           <button
             aria-pressed={season === "winter"}
-            onClick={() => selectSeason("winter")}
+            onClick={() => setSeason("winter")}
           >
             <Snowflake size={15} />
             Zima
@@ -148,50 +116,10 @@ export function Hero() {
           </a>
           <button
             className="hero-gallery-link"
-            onClick={() => openGallery(slides[selected].id)}
+            onClick={() => openGallery(season)}
           >
             <Images size={17} /> Fotogalerie
           </button>
-        </div>
-      </div>
-      <div className="hero-bottom">
-        <div className="slide-controls">
-          <button
-            className="hero-arrow"
-            aria-label="Předchozí snímek"
-            onClick={() => embla?.scrollPrev()}
-          >
-            <ArrowLeft size={18} />
-          </button>
-          <button
-            className="hero-arrow"
-            aria-label="Další snímek"
-            onClick={() => embla?.scrollNext()}
-          >
-            <ArrowRight size={18} />
-          </button>
-          <span className="slide-count" aria-live="polite">
-            0{selected + 1}
-            <span> / 04</span>
-          </span>
-          <span className="drag-hint">
-            <MoveHorizontal size={15} />
-            Tažením prohlédnout
-          </span>
-        </div>
-        <div className="hero-thumbnails" aria-label="Vyberte snímek">
-          {slides.map((photo, index) => (
-            <button
-              key={photo.id}
-              className={index === selected ? "active" : ""}
-              aria-label={`Zobrazit: ${photo.title}`}
-              aria-pressed={index === selected}
-              onClick={() => embla?.scrollTo(index)}
-            >
-              <Photo photo={photo} />
-              <span>{["Chalupa", "Interiér", "Pergola", "Sauna"][index]}</span>
-            </button>
-          ))}
         </div>
       </div>
       <div className="hero-side-label" aria-hidden="true">

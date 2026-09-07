@@ -3025,3 +3025,303 @@ html {
     padding-block: 20px;
   }
 }
+
+/* Seasonal accents stay independent of the stationary chalet photograph. */
+.season-atmosphere,
+.snowfall {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.hero-main-photo {
+  position: absolute;
+  inset: 0;
+}
+.snowfall {
+  opacity: 0;
+  transition: opacity 1.5s;
+  overflow: hidden;
+}
+.snowfall i {
+  position: absolute;
+  top: -8%;
+  left: var(--x);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.65;
+  animation: snow-drift var(--duration) var(--delay) linear infinite;
+  animation-play-state: paused;
+}
+.is-winter .snowfall {
+  opacity: 1;
+}
+.is-winter .snowfall i {
+  animation-play-state: running;
+}
+.scene-paused .season-atmosphere * {
+  animation-play-state: paused;
+}
+@keyframes snow-drift {
+  to {
+    transform: translate3d(55px, 900px, 0);
+  }
+}
+
+.weekend-section {
+  background: #1c352c;
+  color: #f5f5ef;
+  padding: 100px 0 90px;
+  overflow: clip;
+}
+.weekend-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 40px;
+  margin-bottom: 70px;
+}
+.weekend-heading .eyebrow {
+  color: #b2c2a6;
+  font-size: 12px;
+}
+.weekend-heading h2 {
+  font-size: clamp(42px, 4.8vw, 72px);
+  line-height: 1.06;
+}
+.weekend-heading h2 span {
+  color: #b5c6a5;
+}
+.weekend-heading > p {
+  color: #c0cdc4;
+  font-size: 16px;
+  margin: 0 5% 7px 0;
+}
+.weekend-heading > p svg {
+  display: block;
+  margin-top: 24px;
+  color: #d8eaa5;
+}
+.weekend-layout {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 10%;
+  align-items: start;
+}
+.weekend-visual {
+  --photo-height: min(64svh, 640px, calc(100svh - 180px));
+  position: sticky;
+  /* Center the photo and progress bar below the fixed navigation. */
+  top: max(110px, calc((100svh + 90px - var(--photo-height) - 18px) / 2));
+}
+.weekend-photo-stack {
+  height: var(--photo-height);
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #294638;
+}
+.weekend-photo-stack > img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  opacity: 0;
+  transition:
+    opacity 0.85s ease,
+    transform 1.4s ease;
+  transform: scale(1.045);
+}
+.weekend-photo-stack > img.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+.weekend-photo-stack > img:first-child {
+  object-position: 65% center;
+}
+.weekend-photo-caption {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 55px 26px 23px;
+  background: linear-gradient(transparent, #10251dd9);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+}
+.weekend-photo-caption > span {
+  font-size: 12px;
+  white-space: nowrap;
+  color: #d8eaa5;
+}
+.weekend-progress {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  width: 120px;
+}
+.weekend-progress span {
+  width: 24px;
+  height: 2px;
+  background: #ffffff25;
+  transition: background 0.5s;
+}
+.weekend-progress span.is-active {
+  background: #d8eaa5;
+}
+.weekend-step {
+  min-height: 59vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 0 65px;
+}
+.weekend-time {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  letter-spacing: 1.5px;
+  font-size: 12px;
+  color: #b6c7ad;
+  margin-bottom: 28px;
+}
+.weekend-time > span {
+  border: 1px solid #ffffff30;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  letter-spacing: 0;
+  transition:
+    background 0.4s,
+    color 0.4s;
+}
+.weekend-step.is-active .weekend-time > span {
+  background: #d8eaa5;
+  color: #213d32;
+}
+.weekend-step h3 {
+  font-size: clamp(30px, 3.2vw, 46px);
+  margin-bottom: 22px;
+}
+.weekend-step p {
+  color: #c0cdc4;
+  font-size: 17px;
+  max-width: 350px;
+  line-height: 1.8;
+}
+.weekend-step .text-link {
+  color: #d8eaa5;
+  margin-top: 28px;
+  align-self: flex-start;
+  font-size: 14px;
+}
+.weekend-mobile-photo {
+  display: none;
+}
+@media (max-width: 900px) {
+  .weekend-section {
+    padding-block: 70px;
+  }
+  .weekend-layout {
+    gap: 7%;
+    grid-template-columns: 1.1fr 1fr;
+  }
+  .weekend-photo-caption {
+    padding-inline: 18px;
+    font-size: 12px;
+  }
+}
+@media (max-width: 600px) {
+  .snowfall i:nth-child(n + 13) {
+    display: none;
+  }
+  .weekend-section {
+    padding-block: 56px 30px;
+  }
+  .weekend-heading {
+    display: block;
+    margin-bottom: 35px;
+  }
+  .weekend-heading h2 {
+    font-size: 42px;
+  }
+  .weekend-heading > p {
+    margin-top: 24px;
+  }
+  .weekend-heading > p svg {
+    display: none;
+  }
+  .weekend-layout {
+    display: block;
+  }
+  .weekend-visual {
+    display: none;
+  }
+  .weekend-step {
+    min-height: 0;
+    padding: 0 0 48px;
+  }
+  .weekend-mobile-photo {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 27px;
+  }
+  .weekend-step:first-child .weekend-mobile-photo {
+    object-position: 65% center;
+  }
+  .weekend-time {
+    margin-bottom: 18px;
+  }
+  .weekend-step h3 {
+    font-size: 34px;
+    margin-bottom: 15px;
+  }
+  .weekend-step p {
+    font-size: 16px;
+    max-width: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .snowfall,
+  .weekend-visual {
+    display: none;
+  }
+  .weekend-layout {
+    display: block;
+  }
+  .weekend-steps {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
+  }
+  .weekend-step {
+    min-height: 0;
+    justify-content: start;
+  }
+  .weekend-mobile-photo {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 25px;
+  }
+}
+@media (prefers-reduced-motion: reduce) and (max-width: 600px) {
+  .weekend-steps {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+@media print {
+  .weekend-section {
+    display: none;
+  }
+}

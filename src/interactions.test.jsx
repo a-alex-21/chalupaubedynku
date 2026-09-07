@@ -59,6 +59,10 @@ describe("interactive property pages", () => {
   it("switches the hero to winter and opens the actual photo viewer", async () => {
     const user = userEvent.setup();
     const { container } = wrap(<Hero />);
+    expect(container.querySelector(".hero-thumbnails")).toBeNull();
+    expect(
+      screen.queryByRole("button", { name: "Další snímek" }),
+    ).not.toBeInTheDocument();
     const summerLayer = container.querySelector(".hero-season-scene img");
     const winterLayer = container.querySelector(".hero-winter-layer");
     expect(winterLayer).toHaveStyle({ opacity: "0" });
@@ -67,7 +71,7 @@ describe("interactive property pages", () => {
       screen.getByRole("button", { name: "Zima", exact: true }),
     ).toHaveAttribute("aria-pressed", "true");
     expect(
-      screen.getByRole("group", { name: "1 ze 4: Chalupa v zimě" }),
+      screen.getByRole("group", { name: "Chalupa v zimě" }),
     ).toBeInTheDocument();
     // Keep summer underneath until the winter download completes.
     expect(winterLayer).toHaveStyle({ opacity: "0" });
@@ -84,9 +88,17 @@ describe("interactive property pages", () => {
     await user.click(
       screen.getByRole("button", { name: "Fotogalerie", exact: true }),
     );
+    const gallery = screen.getByRole("dialog", { name: "Fotogalerie" });
+    expect(gallery).toHaveTextContent("Chalupa v létě");
     expect(
-      screen.getByRole("dialog", { name: "Fotogalerie" }),
-    ).toHaveTextContent("Chalupa v zimě");
+      within(gallery).queryByRole("button", {
+        name: "Zobrazit: Chalupa v zimě",
+      }),
+    ).not.toBeInTheDocument();
+    await user.click(
+      within(gallery).getByRole("button", { name: "Další fotografie" }),
+    );
+    expect(gallery).toHaveTextContent("Obývací pokoj");
   });
   it("changes pricing by stay length and distributes the total across guests", async () => {
     const user = userEvent.setup();

@@ -14,6 +14,7 @@ import { useState } from "react";
 import { Hero } from "../components/Hero";
 import { BookingBar } from "../components/BookingBar";
 import { RoomExplorer } from "../components/RoomExplorer";
+import { WeekendStory } from "../components/WeekendStory";
 import {
   SectionHeading,
   TextLink,
@@ -62,6 +63,7 @@ export function Home() {
         </div>
         <RoomExplorer />
       </section>
+      <WeekendStory />
       <section className="surroundings-section">
         <div className="container surroundings-layout">
           <div className="surroundings-image">
