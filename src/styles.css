@@ -2787,7 +2787,7 @@ html {
     padding: 25px 20px;
   }
   .form-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 18px;
   }
   .reservation-form-panel legend {
@@ -2796,7 +2796,28 @@ html {
   .field input,
   .field select,
   .field textarea {
+    display: block;
+    max-width: 100%;
     font-size: 16px;
+    line-height: 1.5;
+  }
+  .field input,
+  .field select {
+    height: 50px;
+    margin: 0;
+  }
+  .field input[type="date"] {
+    -webkit-appearance: none;
+    appearance: none;
+    text-align: left;
+    color-scheme: light;
+  }
+  .field input[type="date"]::-webkit-date-and-time-value {
+    min-height: 1.5em;
+    text-align: left;
+  }
+  .field input[type="date"]::-webkit-datetime-edit {
+    padding: 0;
   }
   .consent {
     font-size: 10px;
